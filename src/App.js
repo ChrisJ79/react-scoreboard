@@ -56,17 +56,37 @@ const Player = (props) => {
 
 
 class App extends Component {
+	state = {
+	    players: [
+      {
+        name: "Chris",
+        id: 1
+      },
+      {
+        name: "Gary",
+        id: 2
+      },
+      {
+        name: "Carlos",
+        id: 3
+      },
+      {
+        name: "Dean",
+        id: 4
+      }
+    ]
+	}
 
   render() {
     return (
       <div className="scoreboard">
         <Header 
           title="Scoreboard" 
-          totalPlayers={props.initialPlayers.length} 
+          totalPlayers={this.state.players.length} 
         />
-        {props.initialPlayers.map( player =>
+        {this.state.players.map( player =>
 	        <Player 
-	        	name={this.state.name}
+	        	name={player.name}
 	        	key={player.id.toString}
 	        />
         )}
