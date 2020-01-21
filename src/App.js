@@ -14,22 +14,25 @@ class App extends Component {
         id: 1
       },
       {
-        name: "Gary",
+        name: "Dean",
         score: 0,
         id: 2
       },
       {
-        name: "Carlos",
+        name: "Gary",
         score: 0,
         id: 3
       },
       {
-        name: "Dean",
+        name: "Carlos",
         score: 0,
         id: 4
       }
     ]
-	}
+};
+
+
+	prevPlayerId = 4;
 
 
 	handleScoreChange = (index, change) => { 
@@ -37,6 +40,22 @@ class App extends Component {
 			score: prevState.players[index].score += change
 		}));
 	}
+
+	handleAddPlayer = (name) => { 
+		this.setState( prevState => {
+			return {
+				players: [
+				...prevState.players,			
+					{
+						name,
+						score: 0,
+						id: this.prevPlayerId += 1
+					}
+				]
+			};
+		});
+	}
+
 
 	handleRemovePlayer = (id) => {
 		this.setState( prevState => {
@@ -67,7 +86,7 @@ class App extends Component {
 
 	        />
 		    )}
-	        <AddPlayerForm />
+	        <AddPlayerForm addPlayer={this.handleAddPlayer} />
 
 
 		  </div>
