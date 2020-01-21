@@ -23,6 +23,10 @@ class Stopwatch extends Component {
 		this.setIntervalID = setInterval(() => this.tick(), 100)
 	}
 
+		componentWillUnmount() {
+		clearInterval(this.setIntervalID);
+	}
+
 
 		tick = () => {
 		if (this.state.isRunning) {
