@@ -1,5 +1,18 @@
 /* ELEMENT STYLES -------------------- */
 
+/*App Header CSS*/
+
+.appHeader {
+    text-align: center;
+    color: #000;
+    margin-top: 80px;
+}
+
+
+/* end - App Header CSS*/
+
+
+
 body {
   background: #e8e7e7; 
   font-family: arial;
@@ -103,7 +116,7 @@ svg {
 .scoreboard {
   background: #fff;
   width: 700px;
-  margin: 70px auto;
+  margin: 50px auto;
   box-shadow: 0 2px 0 rgb(133, 104, 250);
   border-radius: 6px;
   overflow: hidden;

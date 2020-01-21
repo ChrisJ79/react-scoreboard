@@ -21,7 +21,6 @@ class Stopwatch extends Component {
 
 	componentDidMount() {
 		this.intervalID = setInterval(() => this.tick(), 100)
-		// console.log(this.state.elapsedTime);
 	}
 
 	componentWillUnmount() {

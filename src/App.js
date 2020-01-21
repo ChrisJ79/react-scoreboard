@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Header from './components/Header';
 import Player from './components/Player';
 import AddPlayerForm from './components/AddPlayerForm';
+import AppHeader from './AppHeader';
 import './App.css';
 
 
@@ -9,22 +10,22 @@ class App extends Component {
 	state = {
 	    players: [
       {
-        name: "Chris",
+        name: "Katy",
         score: 0,
         id: 1
       },
       {
-        name: "Dean",
+        name: "Wayne",
         score: 0,
         id: 2
       },
       {
-        name: "Gary",
+        name: "Squirrely Dan",
         score: 0,
         id: 3
       },
       {
-        name: "Carlos",
+        name: "Darry",
         score: 0,
         id: 4
       }
@@ -68,27 +69,30 @@ class App extends Component {
 
 	render() {
 		return (
-		  <div className="scoreboard">
-		    <Header 
-		      title="Scoreboard" 
-		      players={this.state.players} 
-		      totalPlayers={this.state.players.length} 
-		    />
-		    {this.state.players.map( (player, index) =>
-	        <Player 
-	        	name={player.name}
-	        	score={player.score}
-	        	id={player.id}
-	        	key={player.id.toString()}
-	        	index={index}
-	        	removePlayer={this.handleRemovePlayer}
-	        	changeScore={this.handleScoreChange}
+		  <div>	
+		  	  <AppHeader />	
+			  <div className="scoreboard">
+			    <Header 
+			      title="Scoreboard" 
+			      players={this.state.players} 
+			      totalPlayers={this.state.players.length} 
+			    />
+			    {this.state.players.map( (player, index) =>
+		        <Player 
+		        	name={player.name}
+		        	score={player.score}
+		        	id={player.id}
+		        	key={player.id.toString()}
+		        	index={index}
+		        	removePlayer={this.handleRemovePlayer}
+		        	changeScore={this.handleScoreChange}
 
-	        />
-		    )}
-	        <AddPlayerForm addPlayer={this.handleAddPlayer} />
+		        />
+			    )}
+		        <AddPlayerForm addPlayer={this.handleAddPlayer} />
 
 
+			  </div>
 		  </div>
 		);
 	}
